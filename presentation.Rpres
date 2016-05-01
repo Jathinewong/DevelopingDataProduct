@@ -1,0 +1,59 @@
+Predicting Cellphone Subscriptions by Continent
+========================================================
+author: Ajil
+date: `r Sys.Date()`  
+transition : linear
+font-family: Times
+
+
+<small>
+Coursera Data Science Course  
+Developing Data Products class
+</small>
+
+Overview
+========================================================
+This application uses cellphone subscriptions data, food consumption data, 
+and population density data from 1990 to 2007 to predict cellphone subscriptions of each continents 
+for year 2008 to 2020.
+
+<small>
+Data Description and Source
+- Cellphone subscriptions from World Bank, are subscriptions to a public mobile telephone 
+services using cellular technology. Post-paid and pre-paid subscriptions are included. Unit per 100 people.
+- Food Consumption from Food and Agriculture Organization, Unit kilocalories available on average per person. The total supply of food  
+available in the continent, divided by the population and 365. 
+- Population Density from UN population Division - per square km 
+</small>
+
+Application Functionality
+========================================================
+This application provides a graphic display of cellphone subscriptions prediction of each continent.
+https://jathinewong.shinyapps.io/cell_prediction/
+
+User selects 
+- % increase or decrease for the food consumption of all the continent 
+- % increase or decrease to the population  
+
+<small>The application will apply these selected values to generate the food and population data for 2008 to 2020. 
+A general linear model will be fitted with these two predictors to predict the cellphone subscriptions for 
+the continents for the year 2008 to 2020.</small>
+
+Example 
+========================================================
+<strong><font size="5">This graph displays the actual cellphone subscriptions from 1990 to 2007 from the World Bank data.</font></strong>
+![alt text](data/predict_cell.png)
+
+
+Cellphone Subscription Data 1990-2007 
+========================================================
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, size=4}
+        library(rCharts)
+        library(knitr)
+        cell <- read.csv("data/cell_continent.csv", head=TRUE, fill=TRUE)
+        cell$Year <- as.character(cell$Year)
+        kable(cell)
+```
+
+
