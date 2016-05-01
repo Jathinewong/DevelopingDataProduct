@@ -45,7 +45,7 @@ Example
 ![alt text](data/predict_cell.png)
 
 
-Cellphone Subscription Data 1990-2007 
+Cellphone Subscriptions Data
 ========================================================
 
 
